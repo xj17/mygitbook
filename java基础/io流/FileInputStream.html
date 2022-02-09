@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>io流 · GitBook</title>
+        <title>FileInputStream · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="FileInputStream.html" />
+    <link rel="next" href="../../spider.html" />
     
+    
+    <link rel="prev" href="io.html" />
     
 
     </head>
@@ -114,7 +116,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.2.1" data-path="io.html">
+        <li class="chapter " data-level="1.2.1" data-path="io.html">
             
                 <a href="io.html">
             
@@ -127,7 +129,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="FileInputStream.html">
+        <li class="chapter active" data-level="1.2.2" data-path="FileInputStream.html">
             
                 <a href="FileInputStream.html">
             
@@ -214,7 +216,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >io流</a>
+        <a href="../.." >FileInputStream</a>
     </h1>
 </div>
 
@@ -229,22 +231,44 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p><strong>IO&#x6D41;&#x6982;&#x8FF0;</strong> </p>
-<p>&#x901A;&#x8FC7;IO&#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#x786C;&#x76D8;&#x6587;&#x4EF6;&#x7684;&#x8BFB;&#x548C;&#x5199;</p>
-<p><strong>IO &#x8F93;&#x5165;&#x8F93;&#x51FA;&#x6D41;</strong></p>
-<p>&#x786C;&#x76D8;-&gt;&#x5185;&#x5B58;  &#x8BFB;(read)&#x3001;&#x8F93;&#x5165;(Input)&#x3001;&#x8F93;&#x5165;&#x6D41;(InputStream)</p>
-<p>&#x5185;&#x5B58; -&gt;&#x786C;&#x76D8;  &#x5199;(write)&#x3001;&#x8F93;&#x51FA;(Ouput)&#x3001;&#x8F93;&#x51FA;&#x6D41;(OuputStream)</p>
-<p><strong>IO&#x6D41;&#x5206;&#x7C7B;</strong></p>
-<p>1.&#x6839;&#x636E;&#x6D41;&#x7684;&#x65B9;&#x5411;(&#x4EE5;&#x5185;&#x5B58;&#x4E3A;&#x53C2;&#x7167;&#x7269;)</p>
-<p>2.&#x6839;&#x636E;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x4E0D;&#x540C; </p>
-<p>&#x4E00;&#x79CD;&#x662F;&#x6309;&#x7167;&#x5B57;&#x8282;&#x7684;&#x65B9;&#x5F0F;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x4E00;&#x6B21;&#x8BFB;&#x53D6;1&#x4E2A;&#x5B57;&#x8282;&#xFF0C;(1&#x4E2A;&#x5B57;&#x8282;byte=8&#x4E2A;&#x4E8C;&#x8FDB;&#x5236;&#x4F4D;bit),&#x79F0;&#x4E3A;&#x4E07;&#x80FD;&#x6D41;&#x3002;&#x5176;&#x4E2D;&#x82F1;&#x6587;&#x5360;&#x7528;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x4E2D;&#x6587;&#x5360;&#x7528;&#x4E24;&#x4E2A;&#x5B57;&#x8282;&#x3002;</p>
-<p>&#x53E6;&#x4E00;&#x79CD;&#x662F;&#x6309;&#x7167;&#x5B57;&#x7B26;&#x7684;&#x65B9;&#x5F0F;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x4E00;&#x6B21;&#x8BFB;&#x53D6;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x53EA;&#x80FD;&#x8BFB;&#x53D6;&#x7EAF;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x3002;</p>
-<p>&#x7EFC;&#x4E0A;&#x6D41;&#x4E3B;&#x8981;&#x6709;&#x8F93;&#x5165;&#x6D41;&#x3001;&#x8F93;&#x51FA;&#x6D41;&#x3001;&#x5B57;&#x8282;&#x6D41;&#x3001;&#x5B57;&#x7B26;&#x6D41;&#x3002;</p>
-<p>&#x5728;java&#x4E2D;&#xFF0C;&#x4EE5;Stream&#x7ED3;&#x5C3E;&#x7684;&#x90FD;&#x662F;&#x5B57;&#x8282;&#x6D41;&#x3002;&#x53CD;&#x4E4B;&#x4E3A;&#x5B57;&#x7B26;&#x6D41;&#x3002;</p>
-<hr>
-<p>&#x6D41;&#x662F;&#x4E00;&#x4E2A;&#x7BA1;&#x9053;&#xFF0C;&#x662F;&#x5728;&#x5185;&#x5B58;&#x548C;&#x786C;&#x76D8;&#x4E4B;&#x95F4;&#x7684;&#x901A;&#x9053;&#xFF0C;&#x7528;&#x5B8C;&#x4E4B;&#x540E;&#x4E00;&#x5B9A;&#x8981;&#x5173;&#x95ED;&#x3002;&#x4E0D;&#x7136;&#x4F1A;&#x8017;&#x8D39;(&#x5360;&#x7528;)&#x8D44;&#x6E90;&#x3002;</p>
-<p>&#x6240;&#x6709;&#x7684;&#x8F93;&#x51FA;&#x6D41;&#x90FD;&#x662F;&#x53EF;&#x5237;&#x65B0;&#x7684;&#xFF0C;&#x90FD;&#x6709;flush()&#x65B9;&#x6CD5;&#x3002;&#x7528;&#x5B8C;&#x8F93;&#x51FA;&#x6D41;&#x4E4B;&#x540E;&#x5E94;&#x5237;&#x65B0;&#x4E00;&#x4E0B;&#xFF0C;&#x8868;&#x793A;&#x5C06;&#x7BA1;&#x9053;&#x4E2D;&#x5269;&#x4F59;&#x7684;&#x6570;&#x636E;&#x8F93;&#x51FA;&#x5B8C;&#xFF08;&#x6E05;&#x7A7A;&#x7BA1;&#x9053;&#xFF09;,&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5237;&#x65B0;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x4E22;&#x5931;&#x6570;&#x636E;&#x3002;</p>
+                                <p><strong>FileInputStream</strong></p>
+<pre><code>package io;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+public class IoDemo1 {
+    public static void main(String []args) {
+        FileInputStream fis=null;
+        try {
+            fis=new FileInputStream(&quot;C:/Users/xj/Desktop/demo.txt&quot;);
+            byte[]bytes=new byte[4];
+            while(true){
+                int readCount=fis.read(bytes);
+                if(readCount==-1){
+                    break;
+                }
+                System.out.print(new String(bytes,0,readCount));
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if(fis!=null){
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+
+}
+</code></pre>
                                 
                                 </section>
                             
@@ -271,8 +295,12 @@
 
             
                 
+                <a href="io.html" class="navigation navigation-prev " aria-label="Previous page: io流">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="FileInputStream.html" class="navigation navigation-next navigation-unique" aria-label="Next page: FileInputStream">
+                
+                <a href="../../spider.html" class="navigation navigation-next " aria-label="Next page: 爬虫">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -283,7 +311,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"io流","level":"1.2.1","depth":2,"next":{"title":"FileInputStream","level":"1.2.2","depth":2,"path":"java基础/io流/FileInputStream.md","ref":"java基础/io流/FileInputStream.md","articles":[]},"previous":{"title":"java基础","level":"1.2","depth":1,"ref":"","articles":[{"title":"io流","level":"1.2.1","depth":2,"path":"java基础/io流/io.md","ref":"java基础/io流/io.md","articles":[]},{"title":"FileInputStream","level":"1.2.2","depth":2,"path":"java基础/io流/FileInputStream.md","ref":"java基础/io流/FileInputStream.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"java基础/io流/io.md","mtime":"2022-02-09T12:52:51.912Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-09T12:55:51.246Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"FileInputStream","level":"1.2.2","depth":2,"next":{"title":"爬虫","level":"1.3","depth":1,"path":"spider.md","ref":"spider.md","articles":[]},"previous":{"title":"io流","level":"1.2.1","depth":2,"path":"java基础/io流/io.md","ref":"java基础/io流/io.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"java基础/io流/FileInputStream.md","mtime":"2022-02-09T12:52:51.896Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-09T12:55:51.246Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
