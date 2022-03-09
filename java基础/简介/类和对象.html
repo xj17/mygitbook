@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>FileInputStream · GitBook</title>
+        <title>类和对象 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="面向对象.html" />
     
-    <link rel="prev" href="io.html" />
+    
+    <link rel="prev" href="方法.html" />
     
 
     </head>
@@ -128,9 +130,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1.1" data-path="../简介/基本语法.html">
+        <li class="chapter " data-level="1.2.1.1" data-path="基本语法.html">
             
-                <a href="../简介/基本语法.html">
+                <a href="基本语法.html">
             
                     
                     基本语法
@@ -141,9 +143,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.2" data-path="../简介/方法.html">
+        <li class="chapter " data-level="1.2.1.2" data-path="方法.html">
             
-                <a href="../简介/方法.html">
+                <a href="方法.html">
             
                     
                     方法
@@ -154,9 +156,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.3" data-path="../简介/类和对象.html">
+        <li class="chapter active" data-level="1.2.1.3" data-path="类和对象.html">
             
-                <a href="../简介/类和对象.html">
+                <a href="类和对象.html">
             
                     
                     类和对象
@@ -167,9 +169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.4" data-path="../简介/面向对象.html">
+        <li class="chapter " data-level="1.2.1.4" data-path="面向对象.html">
             
-                <a href="../简介/面向对象.html">
+                <a href="面向对象.html">
             
                     
                     面向对象
@@ -199,9 +201,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.2.1" data-path="io.html">
+        <li class="chapter " data-level="1.2.2.1" data-path="../io流/io.html">
             
-                <a href="io.html">
+                <a href="../io流/io.html">
             
                     
                     io流
@@ -212,9 +214,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.2.2" data-path="FileInputStream.html">
+        <li class="chapter " data-level="1.2.2.2" data-path="../io流/FileInputStream.html">
             
-                <a href="FileInputStream.html">
+                <a href="../io流/FileInputStream.html">
             
                     
                     FileInputStream
@@ -363,7 +365,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >FileInputStream</a>
+        <a href="../.." >类和对象</a>
     </h1>
 </div>
 
@@ -378,45 +380,33 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p><strong>FileInputStream</strong></p>
-<pre><code>package io;
+                                <h5 id="&#x7C7B;&#x548C;&#x5BF9;&#x8C61;">&#x7C7B;&#x548C;&#x5BF9;&#x8C61;</h5>
+<p>1.&#x7C7B;&#x7684;&#x7279;&#x70B9;</p>
+<p>&#x7C7B;&#x662F;&#x5BF9;&#x8C61;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;</p>
+<p>&#x7C7B;&#x662F;&#x5177;&#x6709;&#x76F8;&#x540C;&#x5C5E;&#x6027;&#x548C;&#x884C;&#x4E3A;&#x7684;&#x4E00;&#x7EC4;&#x5BF9;&#x8C61;&#x7684;&#x96C6;&#x5408;</p>
+<p>2.&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;</p>
+<p>&#x5C5E;&#x6027;&#xFF1A;&#x5BF9;&#x8C61;&#x5177;&#x6709;&#x7684;&#x5404;&#x79CD;&#x7279;&#x5F81;&#xFF0C;&#x6BCF;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x6BCF;&#x4E2A;&#x5C5E;&#x6027;&#x90FD;&#x6709;&#x7279;&#x5B9A;&#x7684;&#x503C;</p>
+<p>&#x884C;&#x4E3A;&#xFF1A;&#x5BF9;&#x8C61;&#x80FD;&#x591F;&#x6267;&#x884C;&#x7684;&#x64CD;&#x4F5C;</p>
+<p>2.1 &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;</p>
+<p>&#x7C7B;&#x540D; &#x5BF9;&#x8C61;&#x540D;=new &#x7C7B;&#x540D;()&#xFF1B;  Student st=new Student();</p>
+<p>3.<strong>&#x6210;&#x5458;&#x53D8;&#x91CF;&#x548C;&#x5C40;&#x90E8;&#x53D8;&#x91CF;</strong></p>
+<p>&#x6210;&#x5458;&#x53D8;&#x91CF;&#xFF1A;&#x7C7B;&#x4E2D;&#x65B9;&#x6CD5;&#x5916;&#x7684;&#x53D8;&#x91CF; --&#x5806;&#x5185;&#x5B58;--&#x6709;&#x9ED8;&#x8BA4;&#x7684;&#x521D;&#x59CB;&#x503C;--&#x968F;&#x7740;&#x5BF9;&#x8C61;&#x7684;&#x5B58;&#x5728;&#x800C;&#x5B58;&#x5728;</p>
+<p>&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#xFF1A;&#x65B9;&#x6CD5;&#x4E2D;&#x7684;&#x53D8;&#x91CF;--&#x6808;&#x5185;&#x5B58;--&#x65E0;&#x9ED8;&#x8BA4;&#x521D;&#x59CB;&#x503C;--&#x968F;&#x7740;&#x65B9;&#x6CD5;&#x7684;&#x5B58;&#x5728;&#x800C;&#x5B58;&#x5728;</p>
+<p>4.&#x5C01;&#x88C5;</p>
+<p><strong>5.private&#x5173;&#x952E;&#x5B57;</strong></p>
+<p>&#x6743;&#x9650;&#x4FEE;&#x9970;&#x7B26;&#x3001;&#x53EF;&#x4EE5;&#x4FEE;&#x9970;&#x6210;&#x5458;&#x3001;&#x88AB;private&#x4FEE;&#x9970;&#x7684;&#x6210;&#x5458;&#x53EA;&#x5728;&#x672C;&#x7C7B;&#x4E2D;&#x624D;&#x80FD;&#x8BBF;&#x95EE;</p>
+<p>&#x5982;&#x679C;&#x9700;&#x8981;&#x88AB;&#x5176;&#x4ED6;&#x7C7B;&#x4F7F;&#x7528;&#xFF0C;&#x9700;&#x63D0;&#x4F9B;get&#x3001;set&#x65B9;&#x6CD5;&#xFF0C;&#x65B9;&#x6CD5;&#x7528;public&#x4FEE;&#x9970;</p>
+<p><strong>6.this&#x5173;&#x952E;&#x5B57;</strong></p>
+<p>this&#x4FEE;&#x9970;&#x7684;&#x53D8;&#x91CF;&#x7528;&#x4E8E;&#x6307;&#x4EE3;&#x6210;&#x5458;&#x53D8;&#x91CF;   --&#x89E3;&#x51B3;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x9690;&#x85CF;&#x6210;&#x5458;&#x53D8;&#x91CF;</p>
+<p><strong>7.&#x6784;&#x9020;&#x65B9;&#x6CD5;</strong></p>
+<p>7.1&#x4F5C;&#x7528;&#xFF1A;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;</p>
+<p>7.2&#x529F;&#x80FD;&#xFF1A;&#x5B8C;&#x6210;&#x5BF9;&#x8C61;&#x6570;&#x636E;&#x7684;&#x521D;&#x59CB;&#x5316;</p>
+<p><u>7.3 &#x6CE8;&#x610F;&#x4E8B;&#x9879;</u></p>
+<p>7.3.1 &#x5982;&#x679C;&#x6CA1;&#x6709;&#x5B9A;&#x4E49;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x9ED8;&#x8BA4;&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x65E0;&#x53C2;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;</p>
+<p>7.3.2 &#x81EA;&#x5B9A;&#x4E49;&#x5E26;&#x53C2;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD8;&#x8981;&#x4F7F;&#x7528;&#x65E0;&#x53C2;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#xFF0C;&#x5C31;&#x5FC5;&#x987B;&#x518D;&#x5199;&#x4E00;&#x4E2A;&#x65E0;&#x53C2;&#x6784;&#x9020;&#x65B9;&#x6CD5;</p>
+<p>8.&#x6807;&#x51C6;&#x7C7B;&#x7684;&#x5236;&#x4F5C;</p>
+<p>&#x6210;&#x5458;&#x53D8;&#x91CF;&#x7528;private&#x4FEE;&#x9970;&#xFF0C;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x65E0;&#x53C2;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#xFF0C;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x5E26;&#x591A;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#xFF0C;&#x63D0;&#x4F9B;&#x6BCF;&#x4E00;&#x4E2A;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x5BF9;&#x5E94;&#x7684;get/set&#x65B9;&#x6CD5;&#x3002;</p>
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
-public class IoDemo1 {
-    public static void main(String []args) {
-        FileInputStream fis=null;
-        try {
-            //&#x8BFB;&#x53D6;&#x684C;&#x9762;&#x4E0A;&#x540D;&#x79F0;&#x4E3A;demo.txt&#x7684;&#x6587;&#x4EF6;
-            fis=new FileInputStream(&quot;C:/Users/xj/Desktop/demo.txt&quot;);
-            byte[]bytes=new byte[4];
-            while(true){
-                int readCount=fis.read(bytes);
-                if(readCount==-1){
-                    break;
-                }
-                System.out.print(new String(bytes,0,readCount));
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if(fis!=null){
-                try {
-                    fis.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-
-
-}
-</code></pre>
                                 
                                 </section>
                             
@@ -443,10 +433,14 @@ public class IoDemo1 {
 
             
                 
-                <a href="io.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: io流">
+                <a href="方法.html" class="navigation navigation-prev " aria-label="Previous page: 方法">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="面向对象.html" class="navigation navigation-next " aria-label="Next page: 面向对象">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -455,7 +449,7 @@ public class IoDemo1 {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"FileInputStream","level":"1.2.2.2","depth":3,"next":{"title":"多线程","level":"2.1","depth":1,"ref":"","articles":[{"title":"多线程","level":"2.1.1","depth":2,"path":"java基础/多线程/多线程.md","ref":"java基础/多线程/多线程.md","articles":[]}]},"previous":{"title":"io流","level":"1.2.2.1","depth":3,"path":"java基础/io流/io.md","ref":"java基础/io流/io.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"java基础/io流/FileInputStream.md","mtime":"2022-02-17T00:31:38.835Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-09T14:30:44.310Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"类和对象","level":"1.2.1.3","depth":3,"next":{"title":"面向对象","level":"1.2.1.4","depth":3,"path":"java基础/简介/面向对象.md","ref":"java基础/简介/面向对象.md","articles":[]},"previous":{"title":"方法","level":"1.2.1.2","depth":3,"path":"java基础/简介/方法.md","ref":"java基础/简介/方法.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"java基础/简介/类和对象.md","mtime":"2022-03-09T14:27:25.312Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-09T14:30:44.310Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

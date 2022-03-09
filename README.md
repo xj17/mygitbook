@@ -1,8 +1,16 @@
 随手一记
 
-java提供了八种基本类型。六种数字类型（四个整数型，两个浮点型），一种字符类型，还有一种布尔型。
+关于端口占用：
 
-byte、short、int、long、float、double、boolean、char
+根据端口号查询出对应的进程号，然后杀死该进程。
+
+netstat -ano|findstr ‘端口号’
+
+taskkill /pid ‘进程号’-f
 
 ------
+
+ajax之async属性
+
+async:默认值是true,所有请求为异步请求。如果需要发送同步请求，需要将此项值设为false。
 

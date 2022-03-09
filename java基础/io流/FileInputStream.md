@@ -11,6 +11,7 @@ public class IoDemo1 {
     public static void main(String []args) {
         FileInputStream fis=null;
         try {
+        	//读取桌面上名称为demo.txt的文件
             fis=new FileInputStream("C:/Users/xj/Desktop/demo.txt");
             byte[]bytes=new byte[4];
             while(true){

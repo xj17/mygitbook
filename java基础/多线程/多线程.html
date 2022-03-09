@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>FileInputStream · GitBook</title>
+        <title>多线程 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="../../springboot/demo1.html" />
     
-    <link rel="prev" href="io.html" />
     
 
     </head>
@@ -199,9 +199,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.2.1" data-path="io.html">
+        <li class="chapter " data-level="1.2.2.1" data-path="../io流/io.html">
             
-                <a href="io.html">
+                <a href="../io流/io.html">
             
                     
                     io流
@@ -212,9 +212,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.2.2" data-path="FileInputStream.html">
+        <li class="chapter " data-level="1.2.2.2" data-path="../io流/FileInputStream.html">
             
-                <a href="FileInputStream.html">
+                <a href="../io流/FileInputStream.html">
             
                     
                     FileInputStream
@@ -256,9 +256,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.1.1" data-path="../多线程/多线程.html">
+        <li class="chapter active" data-level="2.1.1" data-path="多线程.html">
             
-                <a href="../多线程/多线程.html">
+                <a href="多线程.html">
             
                     
                     多线程
@@ -363,7 +363,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >FileInputStream</a>
+        <a href="../.." >多线程</a>
     </h1>
 </div>
 
@@ -378,45 +378,41 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p><strong>FileInputStream</strong></p>
-<pre><code>package io;
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
-public class IoDemo1 {
-    public static void main(String []args) {
-        FileInputStream fis=null;
-        try {
-            //&#x8BFB;&#x53D6;&#x684C;&#x9762;&#x4E0A;&#x540D;&#x79F0;&#x4E3A;demo.txt&#x7684;&#x6587;&#x4EF6;
-            fis=new FileInputStream(&quot;C:/Users/xj/Desktop/demo.txt&quot;);
-            byte[]bytes=new byte[4];
-            while(true){
-                int readCount=fis.read(bytes);
-                if(readCount==-1){
-                    break;
-                }
-                System.out.print(new String(bytes,0,readCount));
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if(fis!=null){
-                try {
-                    fis.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
+                                <h4 id="&#x591A;&#x7EBF;&#x7A0B;">&#x591A;&#x7EBF;&#x7A0B;</h4>
+<p>@MartonZhang  <a href="https://www.imooc.com/video/6098" target="_blank">https://www.imooc.com/video/6098</a></p>
+<p><strong>&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;</strong></p>
+<p>1.&#x7EE7;&#x627F;Thread&#x7C7B;</p>
+<pre><code>package concurrent;
+//&#x7EE7;&#x627F;Thread&#x7C7B;
+public class MyThread1 extends Thread{
+    @Override
+    public void run(){}
+    public static void main(String[] args) {
+        MyThread1 mt=new MyThread1();
+        mt.start();
     }
-
-
 }
-</code></pre>
+</code></pre><p>2.&#x5B9E;&#x73B0;Runnable&#x63A5;&#x53E3;</p>
+<pre><code>package concurrent;
+//&#x7EE7;&#x627F;Thread&#x7C7B;
+public class MyThread1 extends Thread{
+    @Override
+    public void run(){}
+    public static void main(String[] args) {
+        MyThread1 mt=new MyThread1();
+        mt.start();
+    }
+}
+</code></pre><p>&#x6BD4;&#x8F83;:Runnable&#x63A5;&#x53E3;&#x53EF;&#x4EE5;&#x88AB;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x5171;&#x4EAB;&#xFF0C;&#x9002;&#x7528;&#x4E8E;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x540C;&#x4E00;&#x8D44;&#x6E90;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x907F;&#x514D;Thread&#x7531;&#x4E8E;java&#x5355;&#x7EE7;&#x627F;&#x7279;&#x6027;&#x5E26;&#x6765;&#x7684;&#x7F3A;&#x9677;&#x3002;</p>
+<p><strong>&#x7EBF;&#x7A0B;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;</strong></p>
+<p>&#x521B;&#x5EFA;&#x3001;&#x5C31;&#x7EEA;&#x3001;&#xFF08;&#x963B;&#x585E;&#xFF09;&#x3001;&#x8FD0;&#x884C;&#x3001;&#x7EC8;&#x6B62;&#x3002;</p>
+<p><strong>&#x5B88;&#x62A4;&#x7EBF;&#x7A0B;</strong></p>
+<p>setDaemon(true); &#x987B;&#x8981;&#x5728;start()&#x4E4B;&#x524D;&#x8FDB;&#x884C;</p>
+<p>&#x5728;&#x5B88;&#x62A4;&#x7EBF;&#x7A0B;&#x4E2D;&#x4EA7;&#x751F;&#x7684;&#x65B0;&#x7EBF;&#x7A0B;&#x4E5F;&#x662F;&#x5B88;&#x62A4;&#x7EBF;&#x7A0B;</p>
+<p>&#x4E0D;&#x662F;&#x6240;&#x6709;&#x7684;&#x4EFB;&#x52A1;&#x90FD;&#x53EF;&#x4EE5;&#x5206;&#x914D;&#x7ED9;&#x5B88;&#x62A4;&#x7EBF;&#x7A0B;&#xFF0C;&#x6BD4;&#x5982;&#x8BFB;&#x5199;&#x64CD;&#x4F5C;&#x548C;&#x8BA1;&#x7B97;&#x903B;&#x8F91;</p>
+<p><u>&#x4F7F;&#x7528;jstack&#x751F;&#x6210;&#x7EBF;&#x7A0B;&#x5FEB;&#x7167;</u></p>
+<p>&#x5E2E;&#x52A9;&#x5B9A;&#x4F4D;&#x7A0B;&#x5E8F;&#x95EE;&#x9898;&#x51FA;&#x73B0;&#x7684;&#x539F;&#x56E0;</p>
+
                                 
                                 </section>
                             
@@ -443,10 +439,10 @@ public class IoDemo1 {
 
             
                 
-                <a href="io.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: io流">
-                    <i class="fa fa-angle-left"></i>
-                </a>
                 
+                <a href="../../springboot/demo1.html" class="navigation navigation-next navigation-unique" aria-label="Next page: springboot相关">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -455,7 +451,7 @@ public class IoDemo1 {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"FileInputStream","level":"1.2.2.2","depth":3,"next":{"title":"多线程","level":"2.1","depth":1,"ref":"","articles":[{"title":"多线程","level":"2.1.1","depth":2,"path":"java基础/多线程/多线程.md","ref":"java基础/多线程/多线程.md","articles":[]}]},"previous":{"title":"io流","level":"1.2.2.1","depth":3,"path":"java基础/io流/io.md","ref":"java基础/io流/io.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"java基础/io流/FileInputStream.md","mtime":"2022-02-17T00:31:38.835Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-09T14:30:44.310Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"多线程","level":"2.1.1","depth":2,"next":{"title":"springboot相关","level":"3.1","depth":1,"path":"springboot/demo1.md","ref":"springboot/demo1.md","articles":[]},"previous":{"title":"多线程","level":"2.1","depth":1,"ref":"","articles":[{"title":"多线程","level":"2.1.1","depth":2,"path":"java基础/多线程/多线程.md","ref":"java基础/多线程/多线程.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"java基础/多线程/多线程.md","mtime":"2022-02-21T09:06:29.285Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-09T14:30:44.310Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

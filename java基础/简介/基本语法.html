@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>FileInputStream · GitBook</title>
+        <title>基本语法 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="方法.html" />
     
-    <link rel="prev" href="io.html" />
     
 
     </head>
@@ -128,9 +128,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1.1" data-path="../简介/基本语法.html">
+        <li class="chapter active" data-level="1.2.1.1" data-path="基本语法.html">
             
-                <a href="../简介/基本语法.html">
+                <a href="基本语法.html">
             
                     
                     基本语法
@@ -141,9 +141,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.2" data-path="../简介/方法.html">
+        <li class="chapter " data-level="1.2.1.2" data-path="方法.html">
             
-                <a href="../简介/方法.html">
+                <a href="方法.html">
             
                     
                     方法
@@ -154,9 +154,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.3" data-path="../简介/类和对象.html">
+        <li class="chapter " data-level="1.2.1.3" data-path="类和对象.html">
             
-                <a href="../简介/类和对象.html">
+                <a href="类和对象.html">
             
                     
                     类和对象
@@ -167,9 +167,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.4" data-path="../简介/面向对象.html">
+        <li class="chapter " data-level="1.2.1.4" data-path="面向对象.html">
             
-                <a href="../简介/面向对象.html">
+                <a href="面向对象.html">
             
                     
                     面向对象
@@ -199,9 +199,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.2.1" data-path="io.html">
+        <li class="chapter " data-level="1.2.2.1" data-path="../io流/io.html">
             
-                <a href="io.html">
+                <a href="../io流/io.html">
             
                     
                     io流
@@ -212,9 +212,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.2.2" data-path="FileInputStream.html">
+        <li class="chapter " data-level="1.2.2.2" data-path="../io流/FileInputStream.html">
             
-                <a href="FileInputStream.html">
+                <a href="../io流/FileInputStream.html">
             
                     
                     FileInputStream
@@ -363,7 +363,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >FileInputStream</a>
+        <a href="../.." >基本语法</a>
     </h1>
 </div>
 
@@ -378,45 +378,34 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p><strong>FileInputStream</strong></p>
-<pre><code>package io;
+                                <p>1&#x3001;&#x8DE8;&#x5E73;&#x53F0; &#x53EF;&#x79FB;&#x690D;</p>
+<p>2&#x3001;&#x6CE8;&#x91CA;</p>
+<p>3&#x3001;&#x5173;&#x952E;&#x5B57;</p>
+<p>4&#x3001;&#x5E38;&#x91CF;</p>
+<p>5&#x3001;&#x6570;&#x636E;&#x7C7B;&#x578B;</p>
+<p><strong>5.1 &#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;</strong></p>
+<p>&#x6570;&#x503C;&#x578B;&#xFF1A;&#x6574;&#x6570;&#xFF08;byte&#x3001;short&#x3001;int&#x3001;long&#xFF09; &#x6D6E;&#x70B9;&#x6570;&#xFF08;float&#x3001;double&#xFF09; &#x5B57;&#x7B26;&#xFF08;char&#xFF09;</p>
+<p>&#x975E;&#x6570;&#x503C;&#x578B;&#xFF1A; &#x5E03;&#x5C14;&#xFF08;boolean&#xFF09;</p>
+<p>5.2&#x5F15;&#x7528;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF1A;&#x7C7B;&#xFF08;class&#xFF09; &#x63A5;&#x53E3; &#xFF08;interface&#xFF09;&#x6570;&#x7EC4;([])</p>
+<p>6&#x3001;&#x53D8;&#x91CF;</p>
+<p><strong>7&#x3001;&#x6807;&#x8BC6;&#x7B26;</strong></p>
+<p>7.1&#x7531;&#x6570;&#x5B57;&#x3001;&#x5B57;&#x6BCD;&#x3001;&#x4E0B;&#x5212;&#x7EBF;&#x3001;$&#x7EC4;&#x6210;</p>
+<p>7.2 &#x4E0D;&#x4EE5;&#x6570;&#x5B57;&#x5F00;&#x5934;&#x3001;&#x4E0D;&#x80FD;&#x662F;&#x5173;&#x952E;&#x5B57;&#x3001;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;</p>
+<p>8&#x3001;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</p>
+<p>9&#x3001;&#x8FD0;&#x7B97;&#x7B26;</p>
+<p>&#x4E09;&#x5143;&#x8FD0;&#x7B97;&#x7B26;  A:B?C &#x5982;&#x679C;A&#x4E3A;&#x771F;&#x6267;&#x884C;B&#x5426;&#x5219;&#x6267;&#x884C;C </p>
+<p>10&#x3001;&#x7A0B;&#x5E8F;&#x7ED3;&#x6784;</p>
+<p>&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x8981;&#x6CE8;&#x610F;&#x4E09;&#x70B9;&#xFF1A;&#x8FB9;&#x754C;&#x503C;&#x3001;&#x6B63;&#x786E;&#x503C;&#x3001;&#x9519;&#x8BEF;&#x503C;</p>
+<h5 id="11&#x3001;&#x6570;&#x7EC4;">11&#x3001;&#x6570;&#x7EC4;</h5>
+<p>1&#x3001;&#x6570;&#x7EC4;&#x7684;&#x5B9A;&#x4E49;&#xFF1A;&#x6570;&#x636E;&#x7C7B;&#x578B;[]&#x53D8;&#x91CF;&#x540D;   int []arr;</p>
+<p>2&#x3001;&#x6570;&#x7EC4;&#x7684;&#x521D;&#x59CB;&#x5316;&#xFF1A;&#x4E3A;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x5206;&#x914D;&#x7A7A;&#x95F4;&#xFF0C;&#x5E76;&#x4E3A;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x8D4B;&#x503C;&#x3002;</p>
+<p>2.1 &#x52A8;&#x6001;&#x521D;&#x59CB;&#x5316;:&#x6570;&#x636E;&#x7C7B;&#x578B;[]&#x53D8;&#x91CF;&#x540D;  =new &#x6570;&#x636E;&#x7C7B;&#x578B;[&#x6570;&#x7EC4;&#x957F;&#x5EA6;]   int []arr=new int[5];</p>
+<p>2.2 &#x9759;&#x6001;&#x521D;&#x59CB;&#x5316; :&#x6570;&#x636E;&#x7C7B;&#x578B;[]&#x53D8;&#x91CF;&#x540D; ={&#x6570;&#x636E;1&#xFF0C;&#x6570;&#x636E;2&#xFF0C;&#x6570;&#x636E;n}&#xFF1B;  int []arr={1,2,3,4,5};</p>
+<p>3&#x3001;&#x6570;&#x7EC4;&#x5143;&#x7D20;&#x8BBF;&#x95EE; &#x6570;&#x7EC4;&#x540D;[&#x7D22;&#x5F15;]</p>
+<p>4&#x3001;&#x5185;&#x5B58;&#x5206;&#x914D;</p>
+<p>5&#x3001;&#x7D22;&#x5F15;&#x8D8A;&#x754C;&#x548C;&#x7A7A;&#x6307;&#x9488;&#x5F02;&#x5E38;</p>
+<hr>
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
-public class IoDemo1 {
-    public static void main(String []args) {
-        FileInputStream fis=null;
-        try {
-            //&#x8BFB;&#x53D6;&#x684C;&#x9762;&#x4E0A;&#x540D;&#x79F0;&#x4E3A;demo.txt&#x7684;&#x6587;&#x4EF6;
-            fis=new FileInputStream(&quot;C:/Users/xj/Desktop/demo.txt&quot;);
-            byte[]bytes=new byte[4];
-            while(true){
-                int readCount=fis.read(bytes);
-                if(readCount==-1){
-                    break;
-                }
-                System.out.print(new String(bytes,0,readCount));
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if(fis!=null){
-                try {
-                    fis.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-
-
-}
-</code></pre>
                                 
                                 </section>
                             
@@ -443,10 +432,10 @@ public class IoDemo1 {
 
             
                 
-                <a href="io.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: io流">
-                    <i class="fa fa-angle-left"></i>
-                </a>
                 
+                <a href="方法.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 方法">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -455,7 +444,7 @@ public class IoDemo1 {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"FileInputStream","level":"1.2.2.2","depth":3,"next":{"title":"多线程","level":"2.1","depth":1,"ref":"","articles":[{"title":"多线程","level":"2.1.1","depth":2,"path":"java基础/多线程/多线程.md","ref":"java基础/多线程/多线程.md","articles":[]}]},"previous":{"title":"io流","level":"1.2.2.1","depth":3,"path":"java基础/io流/io.md","ref":"java基础/io流/io.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"java基础/io流/FileInputStream.md","mtime":"2022-02-17T00:31:38.835Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-09T14:30:44.310Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"基本语法","level":"1.2.1.1","depth":3,"next":{"title":"方法","level":"1.2.1.2","depth":3,"path":"java基础/简介/方法.md","ref":"java基础/简介/方法.md","articles":[]},"previous":{"title":"简介","level":"1.2.1","depth":2,"ref":"","articles":[{"title":"基本语法","level":"1.2.1.1","depth":3,"path":"java基础/简介/基本语法.md","ref":"java基础/简介/基本语法.md","articles":[]},{"title":"方法","level":"1.2.1.2","depth":3,"path":"java基础/简介/方法.md","ref":"java基础/简介/方法.md","articles":[]},{"title":"类和对象","level":"1.2.1.3","depth":3,"path":"java基础/简介/类和对象.md","ref":"java基础/简介/类和对象.md","articles":[]},{"title":"面向对象","level":"1.2.1.4","depth":3,"path":"java基础/简介/面向对象.md","ref":"java基础/简介/面向对象.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"java基础/简介/基本语法.md","mtime":"2022-03-07T06:59:34.532Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-09T14:30:44.310Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
